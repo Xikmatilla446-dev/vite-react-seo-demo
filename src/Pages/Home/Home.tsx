@@ -1,45 +1,26 @@
-import { Container } from "@/components";
-import classes from "./Home.module.scss";
-import VideoPlayer from "@/pages/Home/components/VideoPlayer.tsx";
+import React from "react";
+import { Helmet } from "react-helmet";
+import {  RouteComponentProps, Link } from "@reach/router";
 
-const Home = () => {
-
-	const videoJsOptions:any = {
-		controls: true,
-		responsive: true,
-		fluid: true,
-		sources: [
-			{
-				src: 'https://www.w3schools.com/html/mov_bbb.mp4', // Replace with your video file
-				type: 'video/mp4',
-			},
-		],
-		tracks: [
-			{
-				src: 'https://bitdash-a.akamaihd.net/content/sintel/subtitles/subtitles_en.vtt', // English subtitles
-				kind: 'subtitles',
-				srclang: 'en',
-				label: 'English',
-				default: true,
-			},
-			{
-				src: 'https://bitdash-a.akamaihd.net/content/sintel/subtitles/subtitles_de.vtt', // German subtitles
-				kind: 'subtitles',
-				srclang: 'de',
-				label: 'German',
-			},
-		],
-	};
-
-
+function Home(props: RouteComponentProps) {
 	return (
-		<div className={classes.main}>
-			<Container>
-				<h1>Video.js with React and Vite</h1>
-				<VideoPlayer options={videoJsOptions} />
-			</Container>
+		<div className="App">
+			<Helmet>
+				<meta charSet="utf-8" />
+				<title>My React SEO - Homepage</title>
+				<link
+					rel="canonical"
+					href="https://react-seo-demo-dunghd.vercel.app/"
+				/>
+				<meta name="description" content="Simple React SEO Application" />
+			</Helmet>
+			<h3>Simple React SEO Demo</h3>
+			<header className="App-header">
+				<Link to="/video">Go to video</Link>
+			</header>
 		</div>
 	);
-};
+}
 
-export default Home;
+
+export default Home

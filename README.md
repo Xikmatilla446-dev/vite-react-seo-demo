@@ -49,15 +49,9 @@ vercel dist
 
 ## Author
 
-👤 **Dung Huynh (dunghd.it@gmail.com)**
+👤 **Xikmatilla**
 
-- Website: https://productsway.com/
-- Twitter: [@jellydn](https://twitter.com/jellydn)
-- Github: [@jellydn](https://github.com/jellydn)
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
+this project helped you!
 
 ---
 

@@ -1,47 +1,17 @@
-import { lazy } from "react";
-import { useRoutes } from "react-router-dom";
-import { Layout, NotFound } from "@/components";
+import React from 'react';
+import { Router } from "@reach/router"
+import Home from '../Pages/Home'
+import Video from '../Pages/Video'
 
-// Public Routes
-// const Auth = lazy(() => import("@/pages/Auth"));
+const Routes = () => {
+    return (
+        <div>
+			<Router>
+				<Home path="/" />
+				<Video path="/video" />
+			</Router>
+        </div>
+    );
+};
 
-// Private Routes
-const Home = lazy(() => import("@/pages/Home"));
-
-export default function AllRoutes() {
-	// const publicRoutes = useRoutes([
-	// 	{
-	// 		path: "*",
-	// 		element: <Navigate to={"/auth"} />
-	// 	},
-	// 	{
-	// 		path: "/auth",
-	// 		element: <Auth />
-	// 	},
-	// 	{
-	// 		path: "*",
-	// 		element: <NotFound />
-	// 	}
-	// ]);
-
-	const privateRoutes = useRoutes([
-		{
-			path: "/",
-			element: <Layout />,
-			children: [
-				{
-					path: "/",
-					element: <Home />
-				},
-				{
-					path: "*",
-					element: <NotFound />
-				}
-			]
-		}
-	]);
-
-	return privateRoutes;
-
-	// return !!user ? privateRoutes : publicRoutes;
-}
+export default Routes;
